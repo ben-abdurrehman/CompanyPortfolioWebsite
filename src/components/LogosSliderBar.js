@@ -16,7 +16,7 @@ const LogoSlider = () => {
       if (window.innerWidth < 768) {
         setItemsToShow(3); // Show 3 logos on mobile
       } else {
-        setItemsToShow(6); // Show 6 logos on larger screens
+        setItemsToShow(5); // Show 6 logos on larger screens
       }
     };
 
@@ -49,8 +49,8 @@ const LogoSlider = () => {
           className="flex space-x-4 bg-transparent shadow-none"
         >
           {visibleLogos.map((logo, i) => (
-            <div key={i} className="md:px-1 md:py-0 lg:px-2 lg:py-1 xl:px-4 xl:py-2 z-50 rounded-lg bg-white">
-              <Image className="w-auto h-10 2xl:h-9 object-contain" src={logo} alt={`logo-${i}`} />
+            <div key={i} className="md:px-1 md:py-0 lg:px-2 lg:py-1 xl:px-4 xl:py-2 z-40 rounded-lg bg-white">
+              <Image className="w-auto h-10 2xl:h-14 object-contain" src={logo} alt={`logo-${i}`} />
             </div>
           ))}
         </motion.div>

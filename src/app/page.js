@@ -20,7 +20,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <div className="  relative w-full h-screen">
         <Navbar />
         <Hero />
