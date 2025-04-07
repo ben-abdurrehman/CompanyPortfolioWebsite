@@ -34,13 +34,13 @@ export default function CalendlyPopupButton() {
     <button
       onClick={handleClick}
       disabled={!ready}
-      className={`px-6 py-3 rounded-lg font-semibold transition ${
+      className={`px-6 py-3 rounded-lg font-semibold cursor-pointer transition hover:scale-105 ${
         ready
           ? 'bg-[#211951] text-white hover:opacity-90'
           : 'bg-gray-400 text-gray-100 cursor-not-allowed'
       }`}
     >
-      {ready ? 'Schedule Time' : 'Loading...'}
+      {ready ? 'Book Free Assessment' : 'Loading...'}
     </button>
   );
 }

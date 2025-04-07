@@ -31,7 +31,7 @@ export default function ContactUs() {
             email.
           </p>
 
-          <div className="mt-6 flex flex-col space-y-6">
+          <div className="mt-6 flex flex-col item-center justify-center md:flex-row md:space-x-6 lg:flex-col space-y-6">
             {contactdetails.map((contact) => (
               <div key={contact.id} className="flex items-center space-x-4">
                 <span className="text-[#211951] text-xl sm:text-2xl">
