@@ -26,7 +26,7 @@ export default function Home() {
         <Hero />
       </div>
       <div className="relative w-full h-auto">
-        <GsapAnimejs/>
+        {/* <GsapAnimejs/> */}
         {/* //style={{ backgroundImage: `url(${Noise.src})`}} */}
         <div className="relative w-full h-auto bg-cover bg-center bg-no-repeat">
           <Subscription />

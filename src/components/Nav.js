@@ -20,7 +20,7 @@ const Nav = ({ mobileClose }) => {
         type="button"
         className="cursor-pointer bg-[#211951] shadow-[0_4px_4px_#00000040]  py-1 px-4 lg:py-2 lg:px-6 rounded-[9px] md:text-[13px] xl:text-sm 2xl:text-base text-white mt-4 md:mt-0 transition-transform transform hover:scale-105"
       >
-        Lets Talk
+        <a href="#contact">Lets Talk</a>
       </button>
     </nav>
   );

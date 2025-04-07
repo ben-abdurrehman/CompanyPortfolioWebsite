@@ -50,7 +50,7 @@ const LogoSlider = () => {
         >
           {visibleLogos.map((logo, i) => (
             <div key={i} className="md:px-1 md:py-0 lg:px-2 lg:py-1 xl:px-4 xl:py-2 z-40 rounded-lg bg-white">
-              <Image className="w-auto h-10 2xl:h-14 object-contain" src={logo} alt={`logo-${i}`} />
+              <Image className="w-auto h-10 2xl:h-12 object-contain" src={logo} alt={`logo-${i}`} />
             </div>
           ))}
         </motion.div>

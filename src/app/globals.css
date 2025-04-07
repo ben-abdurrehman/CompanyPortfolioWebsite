@@ -22,6 +22,10 @@
   animation: gradientAnimation 6s ease-in-out infinite;
 }
 
+html, body{
+  scroll-behavior: smooth;
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
