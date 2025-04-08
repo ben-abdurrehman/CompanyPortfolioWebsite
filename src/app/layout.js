@@ -25,10 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Calendly CSS & JS */}
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"
+          defer
         />
         <script
           src="https://assets.calendly.com/assets/external/widget.js"

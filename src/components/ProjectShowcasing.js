@@ -3,7 +3,7 @@ import project from "./Projects";
 
 export default function ProjectShowcasing() {
   return (
-    <section className="font-['SatoshiVariable'] w-full py-16 px-4 sm:px-6 lg:px-8 text-center">
+    <section id="projects" className="font-['SatoshiVariable'] w-full py-28 px-4 sm:px-6 lg:px-8 text-center">
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
         Innovation & Results
       </h2>

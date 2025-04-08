@@ -7,7 +7,7 @@ const Nav = ({ mobileClose }) => {
         {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
           <Link
             key={item}
-            href={`/${item.toLowerCase()}`}
+            href={`#${item.toLowerCase()}`}
             className="text-gray-600 font-['SatoshiVariable'] hover:text-blue-600 py-2 md:py-0 transition-colors"
             onClick={mobileClose}
           >

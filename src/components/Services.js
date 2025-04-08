@@ -3,7 +3,7 @@ import solutions from "./Solutions";
 
 export default function TechnologySolutions() {
   return (
-    <section className="font-['SatoshiVariable'] w-full flex flex-col gap-10 py-16 px-4 sm:px-6 lg:px-8 2xl:py-40 z-50 text-center">
+    <section id="services" className="font-['SatoshiVariable'] w-full flex flex-col gap-10 py-16 px-4 sm:px-6 lg:px-8 2xl:py-40 z-50 text-center">
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
         Technology Solutions That Deliver
       </h2>

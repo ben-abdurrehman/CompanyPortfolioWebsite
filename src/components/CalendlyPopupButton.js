@@ -36,7 +36,7 @@ export default function CalendlyPopupButton() {
       disabled={!ready}
       className={`px-6 py-3 rounded-lg font-semibold cursor-pointer transition hover:scale-105 ${
         ready
-          ? 'bg-[#211951] text-white hover:opacity-90'
+          ? 'bg-transparent backdrop-blur-sm border border-white text-white hover:bg-white hover:text-[#211951]'
           : 'bg-gray-400 text-gray-100 cursor-not-allowed'
       }`}
     >

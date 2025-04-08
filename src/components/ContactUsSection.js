@@ -20,7 +20,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="font-['SatoshiVariable'] w-full py-20 px-4 sm:px-6 md:px-12 lg:px-5 rounded-4xl">
+    <section id="contact" className="font-['SatoshiVariable'] w-full pt-28 py-20 px-4 sm:px-6 md:px-12 lg:px-5 rounded-4xl">
       <div className="w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl mx-auto flex flex-col items-top justify-center lg:flex-row gap-12">
         <div>
           <h2 className="text-2xl text-center lg:text-left sm:text-4xl md:text-3xl 2xl:text-4xl font-bold text-gray-800">
@@ -144,39 +144,3 @@ export function ContactForm() {
     </form>
   );
 }
-
-// export function ContactForm() {
-//   const [state, handleSubmit] = useForm("mqapgqro");
-//   if (state.succeeded) {
-//       return <p>Thanks for joining!</p>;
-//   }
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="email">
-//         Email Address
-//       </label>
-//       <input
-//         id="email"
-//         type="email"
-//         name="email"
-//       />
-//       <ValidationError
-//         prefix="Email"
-//         field="email"
-//         errors={state.errors}
-//       />
-//       <textarea
-//         id="message"
-//         name="message"
-//       />
-//       <ValidationError
-//         prefix="Message"
-//         field="message"
-//         errors={state.errors}
-//       />
-//       <button type="submit" disabled={state.submitting}>
-//         Submit
-//       </button>
-//     </form>
-//   );
-// }

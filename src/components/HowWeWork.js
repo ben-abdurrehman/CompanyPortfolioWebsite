@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function HowWeWork() {
   return (
-    <section className="font-['SatoshiVariable'] w-full relative py-16 text-center overflow-hidden">
+    <section id="about" className="font-['SatoshiVariable'] w-full relative py-28 text-center overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
           How we work at DTF
