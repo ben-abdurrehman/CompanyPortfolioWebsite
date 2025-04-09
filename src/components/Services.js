@@ -15,7 +15,7 @@ export default function TechnologySolutions() {
         {solutions.map((solution, index) => (
           <div
             key={index}
-            className="bg-white rounded-[10px] shadow-[0_4px_4px_#00000040]  p-6 2xl:p-6 flex flex-col items-start text-left transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="bg-white rounded-[10px] shadow-[0_0_8px_#00000040]  p-6 2xl:p-6 flex flex-col items-start text-left transition-transform transform hover:scale-105 hover:shadow-xl"
           >
             <div className="bg-gray-100 w-12 h-12 flex items-center justify-center rounded-full mb-4">
               <FaArrowUpRightFromSquare className="text-gray-600 text-lg" />

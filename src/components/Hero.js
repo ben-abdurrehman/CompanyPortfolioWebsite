@@ -21,6 +21,7 @@ import GsapAnimejs from "./AnimatedGradientBg";
 // import ParticlesBackground from "./ParticlesBackground";
 import CalendlyPopupButton from "./CalendlyPopupButton";
 import LogoSlider from "./LogosSliderBar";
+import AnimatedText from "./AnimatedText";
 
 import { PopupButton } from "react-calendly";
 
@@ -42,7 +43,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.30; // Slower speed
+      videoRef.current.playbackRate = 0.5; // Slower speed
     }
   }, []);
 
@@ -56,7 +57,7 @@ const Hero = () => {
       //   backgroundPosition: "center center",
       // }}
     >
-       <div className="absolute top-0 bg-black opacity-10 left-0 w-full h-full object-cover z-0"></div>
+       <div className="absolute top-0 bg-black opacity-30 left-0 w-full h-full object-cover z-0"></div>
      <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
@@ -65,18 +66,23 @@ const Hero = () => {
         muted
         playsInline
         >
-        <source src="/videos/SpeedLight.mp4" type="video/mp4" />
+        <source src="/videos/AnimationBlur.mp4" type="video/mp4" />
       </video>
-        {/* // /videos/AbstractNebula.mp4
+        {/* 
+        // /videos/AbstractNebula.mp4
+        // /videos/Cyberpunk.mp4 
+        // /videos/CircuitBoard.mp4 
         // /videos/AnimationBlur.mp4
+        // /videos/Tech.mp4 
+        // /videos/MotionGraphics.mp4 
+        // /videos/LightRaining.mp4 
+        // /videos/TechnologyCircuit.mp4 
+        // /videos/SpeedLight.mp4 
+        // /videos/ParticleDot.mp4 
         // /videos/LightSpeed.mp4
-        // /videos/Luminous.mp4
         // /videos/ParticleBg.mp4
         // /videos/ParticleMoving.mp4
-        // /videos/Tech.mp4 
-        // /videos/LightRaining.mp4 
-        // /videos/SpeedLight.mp4 
-        // */}
+        */}
 
       {/* <GsapAnimejs /> */}
       {/* <ParticlesBackground /> */}
@@ -116,10 +122,11 @@ const Hero = () => {
         />
         <h1 className="text-white mt-10 md:mt-0 text-center text-3xl md:text-[44px] lg:text-5xl 2xl:text-6xl font-black font-['SatoshiVariable']">
           <span className="inline md:block mb-2">Transforming Ideas Into</span>
-          <span className="text-[#fff]">Cutting-Edge Solutions</span>
+          <AnimatedText words={['Achievements', 'Success', 'Conclusion', 'Accomplishments']} />
+          {/* <span className="text-[#fff]">Achievements</span> */}
         </h1>
 
-        <div className="absolute select-none w-2/3 left-[18%] top-[36%] md:top-[30%] md:left-1/2 lg:top-1/3 lg:left-[43%] xl:left-[41%] md:w-1/2 flex items-center justify-center gap-1">
+        {/* <div className="absolute select-none w-2/3 left-[18%] top-[36%] md:top-[30%] md:left-1/2 lg:top-1/3 lg:left-[43%] xl:left-[41%] md:w-1/2 flex items-center justify-center gap-1">
           <Image
             className="w-6 md:w-10 lg:w-11 xl:w-12 2xl:w-14"
             src={ArrowLeft}
@@ -133,7 +140,7 @@ const Hero = () => {
             src={ArrowRight}
             alt="ArrowRight"
           />
-        </div>
+        </div> */}
 
         <p className="w-5/6 text-base xl:text-base 2xl:text-xl mt-2 2xl:mt-10 text-white text-center">
           Let's transform your vision into a world-class product. Our bespoke

@@ -38,8 +38,10 @@ export default function OurLocations() {
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-800">Our Locations</h2>
       <p className="text-gray-500 mt-2">Say hello to our friendly team at one of these locations.</p>
 
-      <div className="relative w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl mx-auto mt-8 bg-contain bg-no-repeat bg-center rounded-lg"
-           style={{ backgroundImage: `url(${WorldSvgMap.src})`, height: "50vh" }}>
+      <div className="relative w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl p-3 md:p-10 mx-auto mt-8 bg-contain bg-no-repeat bg-gray-50 bg-center rounded-lg"
+          //  style={{ backgroundImage: `url(${WorldSvgMap.src})`, filter: "drop-shadow(0 0 0.75rem #211951)",  height: "50vh", backgroundColor: "#f7f7f7" }}
+           >
+            <Image src={WorldSvgMap} alt="World Map" className="w-full h-full object-cover rounded-lg hover:drop-shadow-[0_0_1px_rgba(173,70,255,0.9)] drop-shadow-[0_0_1px_rgba(0,0,0,0.7)] select-none" />
         {locations.map((location) => (
           <span key={location.id}
                 className="absolute flex size-2 cursor-pointer"
