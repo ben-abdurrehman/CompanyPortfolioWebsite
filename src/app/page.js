@@ -38,7 +38,7 @@ export default function Home() {
         <div className="relative w-full h-auto">
           <MilestoneSection />
           <TestimonialSection />
-          <div className="absolute invisible lg:visible left-[10%] p-4 sm:p-5 sm:left-[20%] md:left-[9%] lg:left-[10%] xl:left-[15%] 2xl:left-[18%] md:top-[48%] 2xl:top-[48%] top-[43%] z-30 w-2/3 sm:w-3/5 md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-2/3 bg-white rounded-4xl shadow-lg md:flex flex-col gap-1 lg:flex-row items-center justify-between">
+          <div className="absolute invisible lg:visible left-[10%] p-4 sm:p-5 sm:left-[20%] md:left-[9%] lg:left-[10%] xl:left-[15%] 2xl:left-[18%] top-[43%] z-30 w-2/3 sm:w-3/5 md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-2/3 bg-white rounded-4xl shadow-[2px_2px_8px_#00000040] md:flex flex-col gap-1 lg:flex-row items-center justify-between">
             <span className="text-center sm:text-left">
               “Statistics show that
               <span className="text-red-500"> 95%</span>

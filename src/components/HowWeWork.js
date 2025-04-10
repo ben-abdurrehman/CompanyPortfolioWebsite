@@ -14,7 +14,7 @@ export default function HowWeWork() {
           How we work at DTF
         </h2>
         <p className="text-gray-500 font-['Inter'] mt-2 mb-10">
-          Our shared values keep us connected and guide us as one team.
+          Inside DTF: The Values We Live By
         </p>
       </div>
       
@@ -39,7 +39,7 @@ export default function HowWeWork() {
       <Image 
         src={Blob} 
         alt="Blob" 
-        className="absolute inset-0 object-cover -z-30 w-full h-full opacity-40"
+        className="absolute inset-0 object-cover -z-30 w-full h-full opacity-40 "
       />
     </section>
   );

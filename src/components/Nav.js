@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import AnimatedButton from './AnimatedButton';
+
 const Nav = ({ mobileClose }) => {
   return (
     <nav className="flex flex-col items-start p-10 md:flex-row md:items-center bg-white md:p-[6px] lg:space-x-4 xl:space-x-6 rounded-2xl md:shadow-[0_4px_4px_#00000040] shadow-none md:relative z-50">
@@ -15,13 +17,7 @@ const Nav = ({ mobileClose }) => {
           </Link>
         ))}
       </div>
-
-      <button
-        type="button"
-        className="cursor-pointer bg-[#211951] shadow-[0_4px_4px_#00000040]  py-1 px-4 lg:py-2 lg:px-6 rounded-[9px] md:text-[13px] xl:text-sm 2xl:text-base text-white mt-4 md:mt-0 transition-transform transform hover:scale-105"
-      >
-        <a href="#contact">Lets Talk</a>
-      </button>
+      <AnimatedButton text="Lets Talk" a =  {<a href="#contact">Lets Talk</a>} />
     </nav>
   );
 };

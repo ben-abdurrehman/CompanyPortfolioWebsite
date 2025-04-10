@@ -1,13 +1,59 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import WorldSvgMap from "@/assets/WorldSvgMap.png";
 import FlagPAK from "@/assets/Flags.png";
 import { IoIosCloseCircle } from "react-icons/io";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 export default function OurLocations() {
+
+  const imageRef = useRef(null);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const imageInView = useInView(imageRef, { once: true, margin: "-100px" });
   const [selectedLocation, setSelectedLocation] = useState(null);
+
+  useEffect(() => {
+    if (!sectionRef.current || !headingRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current,
+      { backgroundColor: "#ffffff" },
+      {
+        backgroundColor: "#000000",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          end: "top 30%",
+          toggleActions: "play reverse play reverse",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      headingRef.current,
+      { color: "#1F2937" },
+      {
+        color: "#ffffff",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 50%",
+          end: "top 40%",
+          toggleActions: "play reverse play reverse",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
   const locations = [
     {
@@ -34,14 +80,25 @@ export default function OurLocations() {
   ];
 
   return (
-    <section className="w-full h-full py-16 px-6 text-center">
-      <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-800">Our Locations</h2>
+    <section ref={sectionRef} className="w-full h-full py-16 px-6 text-center">
+      <h2 ref={headingRef} className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-800">Our Locations</h2>
       <p className="text-gray-500 mt-2">Say hello to our friendly team at one of these locations.</p>
 
-      <div className="relative w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl p-3 md:p-10 mx-auto mt-8 bg-contain bg-no-repeat bg-gray-50 bg-center rounded-lg"
+      <div className="relative w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl p-3 md:p-10 mx-auto mt-8 bg-contain bg-no-repeat bg-center rounded-lg"
           //  style={{ backgroundImage: `url(${WorldSvgMap.src})`, filter: "drop-shadow(0 0 0.75rem #211951)",  height: "50vh", backgroundColor: "#f7f7f7" }}
            >
-            <Image src={WorldSvgMap} alt="World Map" className="w-full h-full object-cover rounded-lg hover:drop-shadow-[0_0_1px_rgba(173,70,255,0.9)] drop-shadow-[0_0_1px_rgba(0,0,0,0.7)] select-none" />
+           <motion.div
+              ref={imageRef}
+              initial={{ opacity: 0, y: 40 }}
+              animate={imageInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <Image
+                src={WorldSvgMap}
+                alt="World Map"
+                className="w-full h-[50vh] object-contain rounded-lg drop-shadow-[0_0_1px_rgba(0,0,0,0.7)] select-none"
+              />
+            </motion.div>
         {locations.map((location) => (
           <span key={location.id}
                 className="absolute flex size-2 cursor-pointer"
@@ -69,20 +126,20 @@ export default function OurLocations() {
       </div>
 
       <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-[90%] md:w-5/6 lg:w-4/5 xl:w-5xl 2xl:w-7xl mx-auto text-gray-800">
-        <div className="text-center bg-white p-4 rounded-lg md:bg-transparent md:p-0 md:rounded-none">
-          <h3 className="font-semibold">Operations/HR</h3>
-          <p className="text-sm text-gray-600">Our friendly team is here to help.</p>
-          <a href="mailto:jahanzaib@devtechfusion.com" className="text-blue-500 text-sm">jahanzaib@devtechfusion.com</a>
+        <div className="text-center p-4 rounded-lg md:p-0 md:rounded-none">
+          <h3 className="font-semibold text-white">Operations/HR</h3>
+          <p className="text-sm text-gray-400">Our friendly team is here to help.</p>
+          <a href="mailto:jahanzaib@devtechfusion.com" className="text-gray-400 hover:text-gray-200 text-sm">jahanzaib@devtechfusion.com</a>
         </div>
-        <div className="text-center bg-white p-4 rounded-lg md:bg-transparent md:p-0 md:rounded-none">
-          <h3 className="font-semibold">Business Development</h3>
-          <p className="text-sm text-gray-600">Questions or queries? Get in touch!</p>
-          <a href="mailto:sales@devtechfusion.com" className="text-blue-500 text-sm">sales@devtechfusion.com</a>
+        <div className="text-center p-4 rounded-lg md:p-0 md:rounded-none">
+          <h3 className="font-semibold text-white">Business Development</h3>
+          <p className="text-sm text-gray-400">Questions or queries? Get in touch!</p>
+          <a href="mailto:sales@devtechfusion.com" className="text-gray-400 hover:text-gray-200 text-sm">sales@devtechfusion.com</a>
         </div>
-        <div className="text-center bg-white p-4 rounded-lg md:bg-transparent md:p-0 md:rounded-none">
-          <h3 className="font-semibold">Technology</h3>
-          <p className="text-sm text-gray-600">Questions or queries? Get in touch!</p>
-          <a href="mailto:ahmad@devtechfusion.com" className="text-blue-500 text-sm">ahmad@devtechfusion.com</a>
+        <div className="text-center p-4 rounded-lg md:p-0 md:rounded-none">
+          <h3 className="font-semibold text-white">Technology</h3>
+          <p className="text-sm text-gray-400">Questions or queries? Get in touch!</p>
+          <a href="mailto:ahmad@devtechfusion.com" className="text-gray-400 hover:text-gray-200 text-sm">ahmad@devtechfusion.com</a>
         </div>
       </div>
     </section>

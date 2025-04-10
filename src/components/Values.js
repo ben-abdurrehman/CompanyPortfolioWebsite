@@ -8,33 +8,33 @@ import Flash from "../assets/Flash.png";
 
 const values = [
     {
-      title: "Care about our team",
-      description: "Understand what matters to our employees. Give them what they need to do their best work.",
+      title: "A Team That Cares",
+      description: "People matter. Listening, understanding, and providing the right support create an environment where everyone thrives and delivers their best work.",
       icon: Team,
     },
     {
-      title: "Be excellent to each other",
+      title: "Straight Talk, Always",
       description: "No games. No bullshit. We rely on our peers to improve. Be open, honest, and kind.",
       icon: Heart,
     },
     {
-      title: "Pride in what we do",
-      description: "Value quality and integrity in everything we do. At all times. No exceptions.",
+      title: "Pride in Every Creation",
+      description: "Passion drives excellence. High standards of quality and integrity ensure no compromises in what gets built.",
       icon: Forward,
     },
     {
-      title: "Don't #!&$ the customer",
-      description: "Understand customer needs and unarticulated needs. Make them wildly successful.",
+      title: "Customers Come First",
+      description: "Meeting expectations isn’t enough. Understanding both spoken and unspoken needs leads to truly exceptional customer success.",
       icon: SmileEmogi,
     },
     {
-      title: "Do the impossible",
-      description: "Be energized by difficult problems. Revel in unknowns. Ask 'Why?' but always question, 'Why not?'",
+      title: "Challenges? Bring Them On",
+      description: "The unknown sparks curiosity. Pushing boundaries, questioning assumptions, and embracing challenges drive continuous growth.",
       icon: Flag,
     },
     {
-      title: "Sweat the small stuff",
-      description: "We believe the best products come from the best attention to detail. Sweat the small stuff!",
+      title: "Details Matter",
+      description: "Great products stem from precision. Every small element counts, ensuring a seamless and impactful experience.",
       icon: Flash,
     },
   ];

@@ -34,8 +34,8 @@ export default function MilestoneSection() {
   return (
     <section ref={sectionRef} className="font-['SatoshiVariable'] w-full sm:h-[100vh] lg:h-[70vh] relative flex items-center justify-center z-20 py-16 px-6">
       <div className="flex flex-col lg:flex-row items-center lg:justify-evenly py-16 w-[90%] md:w-5/6 lg:w-4xl xl:w-5xl 2xl:w-7xl">
-        <div className="z-40 bg-white rounded-lg w-full h-full md:w-[90%] lg:w-[45%] xl:w-2/5">
-          <Image src={carlosMuza} alt="Modern Office" className="rounded-lg shadow-lg w-full h-full md:h-96" />
+        <div className="z-40 bg-gray-200 rounded-lg w-full h-full md:w-[90%] lg:w-[45%] xl:w-2/5">
+          <Image src={carlosMuza} alt="Modern Office" className="shadow-lg w-full h-full md:h-96 md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg" />
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-5 lg:w-[45%] xl:w-2/5 text-center md:text-left mt-10 md:mt-10 lg:mt-0 lg-12">
@@ -45,9 +45,9 @@ export default function MilestoneSection() {
           </h2>
 
           <div className="grid grid-cols-1 text-center md:grid-cols-2 md:gap-x-40 lg:gap-x-20 md:gap-y-10 lg:grid-cols-2 gap-y-10 mt-4">
-            {[{ end: 400, suffix: "+", text: "Projects Completed" },
-              { end: 600, suffix: "%", text: "Return on investment" },
-              { end: 10000, suffix: "+", text: "Global Downloads" },
+            {[{ end: 23, suffix: "+", text: "Projects Completed" },
+              { end: 1.69, suffix: "M", text: "Secured worldwide" },
+              { end: 43, suffix: "", text: "Professional Members" },
               { end: 200, suffix: "+", text: "5-star Reviews" }].map((item, index) => (
               <motion.div
                 key={index}

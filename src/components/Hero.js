@@ -66,7 +66,7 @@ const Hero = () => {
         muted
         playsInline
         >
-        <source src="/videos/AnimationBlur.mp4" type="video/mp4" />
+        <source src="/videos/Tech.mp4" type="video/mp4" />
       </video>
         {/* 
         // /videos/AbstractNebula.mp4
@@ -121,31 +121,12 @@ const Hero = () => {
           height={40}
         />
         <h1 className="text-white mt-10 md:mt-0 text-center text-3xl md:text-[44px] lg:text-5xl 2xl:text-6xl font-black font-['SatoshiVariable']">
-          <span className="inline md:block mb-2">Transforming Ideas Into</span>
-          <AnimatedText words={['Achievements', 'Success', 'Conclusion', 'Accomplishments']} />
-          {/* <span className="text-[#fff]">Achievements</span> */}
+          <span className="inline md:block mb-2">The Digital World Shifts  <br /> Our Dedication Doesn't.</span>
+          {/* <AnimatedText words={['Achievements', 'Conclusion', 'Accomplishments']} /> */}
         </h1>
 
-        {/* <div className="absolute select-none w-2/3 left-[18%] top-[36%] md:top-[30%] md:left-1/2 lg:top-1/3 lg:left-[43%] xl:left-[41%] md:w-1/2 flex items-center justify-center gap-1">
-          <Image
-            className="w-6 md:w-10 lg:w-11 xl:w-12 2xl:w-14"
-            src={ArrowLeft}
-            alt="ArrowLeft"
-          />
-          <span className="Caveat relative top-1 md:top-2 text-[#fff] text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold">
-            Fusion Style
-          </span>
-          <Image
-            className="w-6 md:w-10 lg:w-11 xl:w-12 2xl:w-14"
-            src={ArrowRight}
-            alt="ArrowRight"
-          />
-        </div> */}
-
         <p className="w-5/6 text-base xl:text-base 2xl:text-xl mt-2 2xl:mt-10 text-white text-center">
-          Let's transform your vision into a world-class product. Our bespoke
-          applications are tailored to your business needs, ensuring you achieve
-          the visibility and growth you deserve.
+        We shape great ideas into reality with the force of digital technology and future-proof IT solutions.
         </p>
         <CalendlyPopupButton />
       </div>

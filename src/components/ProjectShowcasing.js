@@ -7,8 +7,8 @@ export default function ProjectShowcasing() {
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
         Innovation & Results
       </h2>
-      <p className="text-gray-500 font-['Inter']  mt-2 mb-10">
-        Neque, Pulvinar Vestibulum Non Aliquam.
+      <p className="text-gray-500 font-['Inter'] text-lg  mt-2 mb-10">
+        Driving progress with creative solutions and tangible impact.
       </p>  
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 w-[90%] md:w-5/6 lg:w-4xl xl:w-5xl 2xl:w-7xl mx-auto">

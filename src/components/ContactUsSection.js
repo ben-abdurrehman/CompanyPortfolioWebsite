@@ -1,6 +1,7 @@
 import { LuMail, LuPhone } from "react-icons/lu";
 import { useForm, ValidationError } from "@formspree/react";
 
+
 export default function ContactUs() {
   const contactdetails = [
     {
@@ -58,7 +59,7 @@ export default function ContactUs() {
 
         <div
           id="contact"
-          className="bg-white xl:w-1/2 2xl:w-2/5 p-5 sm:p-5 rounded-lg shadow-md w-full"
+          className="bg-[#211951] xl:w-1/2 2xl:w-2/5 rounded-lg shadow-lg w-full"
         >
           <ContactForm />
         </div>
@@ -74,7 +75,7 @@ export function ContactForm() {
     <form
       action="https://formspree.io/f/mqapgqro"
       method="POST"
-      className="space-y-4 mx-auto"
+      className="bg-white w-full h-full p-5 space-y-4 border border-[#211951] rounded-lg mx-auto hover:translate-y-[-8px] hover:translate-x-[-8px] transition-transform duration-300"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
@@ -137,7 +138,6 @@ export function ContactForm() {
           .
         </label>
       </div>
-
       <button type="submit" className="w-full bg-[#211951] text-white py-2 mt-4 rounded hover:bg-[#191241] transition">
         Send message
       </button>
