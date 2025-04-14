@@ -34,7 +34,8 @@ export default function ContactUs() {
 
           <div className="mt-6 flex flex-col item-center justify-center md:flex-row md:space-x-6 lg:flex-col space-y-6">
             {contactdetails.map((contact) => (
-              <div key={contact.id} className="flex items-center space-x-4">
+              <div key={contact.id} className="bg-[#211951]  w-3/4 rounded-lg flex items-center relative z-0 space-x-4">
+                <div className="bg-white z-20 rounded-lg   border border-[#211951] w-full h-full relative p-5 transition-transform md:hover:translate-y-[-8px] md:hover:translate-x-[-8px]">
                 <span className="text-[#211951] text-xl sm:text-2xl">
                   {contact.icon}
                 </span>
@@ -51,6 +52,7 @@ export default function ContactUs() {
                   >
                     {contact.link}
                   </a>
+                </div>
                 </div>
               </div>
             ))}

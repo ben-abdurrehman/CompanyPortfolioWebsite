@@ -5,6 +5,8 @@ import Head from "next/head";
 
 import { useEffect, useState, useRef } from "react";
 
+import gsap from "gsap";
+
 import RingRight from "@/assets/RingRight.png";
 import RingLeft from "@/assets/RingLeft.png";
 import Dots from "@/assets/Dots.png";
@@ -39,12 +41,36 @@ import { PopupButton } from "react-calendly";
         // */}
 
 const Hero = () => {
+  const lines = [
+    "The Digital World Shifts",
+    "Our Dedication Doesn't."
+  ];
+
   const videoRef = useRef(null);
+  const headingRef = useRef(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5; // Slower speed
     }
+  }, []);
+
+
+  useEffect(() => {
+    const chars = headingRef.current.querySelectorAll(".char");
+
+    gsap.fromTo(
+      chars,
+      { y: -100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power4.out",
+        duration: 1,
+        stagger: 0.035,
+        delay: 0.2,
+      }
+    );
   }, []);
 
   return (
@@ -57,7 +83,6 @@ const Hero = () => {
       //   backgroundPosition: "center center",
       // }}
     >
-       <div className="absolute top-0 bg-black opacity-30 left-0 w-full h-full object-cover z-0"></div>
      <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
@@ -68,6 +93,7 @@ const Hero = () => {
         >
         <source src="/videos/Tech.mp4" type="video/mp4" />
       </video>
+      <div className="absolute top-0 bg-black opacity-30 left-0 w-full h-full object-cover z-0"></div>
         {/* 
         // /videos/AbstractNebula.mp4
         // /videos/Cyberpunk.mp4 
@@ -120,9 +146,18 @@ const Hero = () => {
           width={40}
           height={40}
         />
-        <h1 className="text-white mt-10 md:mt-0 text-center text-3xl md:text-[44px] lg:text-5xl 2xl:text-6xl font-black font-['SatoshiVariable']">
-          <span className="inline md:block mb-2">The Digital World Shifts  <br /> Our Dedication Doesn't.</span>
-          {/* <AnimatedText words={['Achievements', 'Conclusion', 'Accomplishments']} /> */}
+        <h1 ref={headingRef} className="text-white mt-10 md:mt-0 text-center text-3xl md:text-[44px] lg:text-5xl 2xl:text-6xl font-black font-['SatoshiVariable']">
+        <span className="inline-block">
+          {lines.map((line, lineIdx) => (
+            <div key={lineIdx} className="block">
+              {line.split("").map((char, i) => (
+                <span key={`${lineIdx}-${i}`} className="char inline-block">
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </div>
+          ))}
+        </span>
         </h1>
 
         <p className="w-5/6 text-base xl:text-base 2xl:text-xl mt-2 2xl:mt-10 text-white text-center">

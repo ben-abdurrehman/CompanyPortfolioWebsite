@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import carlosMuza from "@/assets/carlos-muza.jpg";
-import creators from "@/assets/creators.jpg";
-import sergeyZolkin from "@/assets/sergey-zolkin.jpg";
+import AIImage from "@/assets/AI-image.png";
+import LineSection from "@/assets/Line-Section.svg";
 
 const Subscription = () => {
   return (
     <section className="w-full flex justify-center py-10 px-4 sm:px-6 lg:px-8">
+      {/* <Image className="absolute top-0 z-0 w-full h-full object-fill" src={LineSection} alt="Background" /> */}
       <motion.div 
           initial={{ opacity: 0, y: 90 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,8 +39,8 @@ const Subscription = () => {
 
         <div className="w-full lg:w-2/5 flex justify-center bg-gray-200 rounded-lg items-center mt-6 md:mt-0">
             <Image
-              src={sergeyZolkin}
-              alt="Placeholder"
+              src={AIImage}
+              alt="AI-Image"
               className="absolute z-0 object-cover top-0 bottom-0 md:relative w-full h-full md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg"
             />
         </div>

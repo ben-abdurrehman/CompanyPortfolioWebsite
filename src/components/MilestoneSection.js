@@ -4,9 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-import carlosMuza from "@/assets/carlos-muza.jpg";
-import creators from "@/assets/creators.jpg";
-import sergeyZolkin from "@/assets/sergey-zolkin.jpg";
+import Mission from "@/assets/Mission.png";
 
 export default function MilestoneSection() {
   const sectionRef = useRef(null);
@@ -35,7 +33,7 @@ export default function MilestoneSection() {
     <section ref={sectionRef} className="font-['SatoshiVariable'] w-full sm:h-[100vh] lg:h-[70vh] relative flex items-center justify-center z-20 py-16 px-6">
       <div className="flex flex-col lg:flex-row items-center lg:justify-evenly py-16 w-[90%] md:w-5/6 lg:w-4xl xl:w-5xl 2xl:w-7xl">
         <div className="z-40 bg-gray-200 rounded-lg w-full h-full md:w-[90%] lg:w-[45%] xl:w-2/5">
-          <Image src={carlosMuza} alt="Modern Office" className="shadow-lg w-full h-full md:h-96 md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg" />
+          <Image src={Mission} alt="Mission" className="shadow-lg w-full h-full md:h-96 md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg" />
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-5 lg:w-[45%] xl:w-2/5 text-center md:text-left mt-10 md:mt-10 lg:mt-0 lg-12">

@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 export default function CalendlyPopupButton() {
   const [ready, setReady] = useState(false);
 
+  
+
   useEffect(() => {
     const waitForCalendly = setInterval(() => {
       if (typeof window !== 'undefined' && window.Calendly) {
@@ -29,38 +31,51 @@ export default function CalendlyPopupButton() {
   };
 
   return (
-    <AnimatedButton
-      text={'Get Your Personalized Tech Roadmap'}
-      handleClick={handleClick}
-      ready={ready}
-    />
-  );
-}
-
-
-const AnimatedButton = ({text, handleClick, ready}) => {
-  return (
+    // <AnimatedButton
+    //   text={'Get Your Personalized Tech Roadmap'}
+    //   handleClick={handleClick}
+    //   ready={ready}
+    // />
     <button
       onClick={handleClick} 
       disabled={!ready}
       className={`px-6 py-3 rounded-lg font-semibold cursor-pointer ${
         ready
           ? 'bg-transparent backdrop-blur-sm border border-white text-white hover:bg-white hover:text-[#211951] overflow-hidden group'
-          : 'bg-gray-400 text-gray-100 cursor-not-allowed'
+          : 'bg-gray-100 cursor-not-allowed'
       }`}
        >
       <span className="flex flex-col items-center justify-center relative">
-        <span
-          className="block transition-transform duration-400 group-hover:translate-y-[130%]"
-        >
-          {text}
-        </span>
-        <span
-          className="block absolute left-0 top-0 transition-transform duration-400 translate-y-[-150%] group-hover:translate-y-0"
-        >
-          {text}
-        </span>
+      Get Your Personalized Tech Roadmap
       </span>
     </button>
   );
-};
+}
+
+
+// const AnimatedButton = ({text, handleClick, ready}) => {
+//   return (
+//     <button
+//       onClick={handleClick} 
+//       disabled={!ready}
+//       className={`px-6 py-3 rounded-lg font-semibold cursor-pointer ${
+//         ready
+//           ? 'bg-transparent backdrop-blur-sm border border-white text-white hover:bg-white hover:text-[#211951] overflow-hidden group'
+//           : 'bg-gray-400 text-gray-100 cursor-not-allowed'
+//       }`}
+//        >
+//       <span className="flex flex-col items-center justify-center relative">
+//         <span
+//           className="block transition-transform duration-400 group-hover:translate-y-[130%]"
+//         >
+//           {text}
+//         </span>
+//         <span
+//           className="block absolute left-0 top-0 transition-transform duration-400 translate-y-[-150%] group-hover:translate-y-0"
+//         >
+//           {text}
+//         </span>
+//       </span>
+//     </button>
+//   );
+// };

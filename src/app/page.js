@@ -14,13 +14,16 @@ import TestimonialSection from "@/components/ClientTestimonials";
 import OurLocations from "@/components/OurLocation";
 import ContactUs from "@/components/ContactUsSection";
 import GsapAnimejs from '@/components/AnimatedGradientBg' 
+import DevtechTape from '@/components/DevtechTape' 
+import Techrain from '@/components/Techrain' 
 import Noise from '@/assets/Taxture.png'
+import LineSection from "@/assets/Line-Section.svg";
 
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="relative">
       <div className="  relative w-full h-screen">
         <Navbar />
         <Hero />
@@ -29,8 +32,11 @@ export default function Home() {
         {/* <GsapAnimejs/> */}
         {/* //style={{ backgroundImage: `url(${Noise.src})`}} */}
         <div className="relative w-full h-auto bg-cover bg-center bg-no-repeat">
+          <Image className="absolute inset-0 object-fill -z-40 w-full h-full opacity-40" src={LineSection} alt="LineSection" />
+          {/* <Techrain count={40} /> */}
           <Subscription />
           <TechnologySolutions />
+          <DevtechTape/>
           <ProjectShowcasing />
           <HowWeWork />
         </div>
@@ -53,7 +59,6 @@ export default function Home() {
           <ContactUs />
         </div>
       </div>
-
       <Footer />
     </div>
   );
