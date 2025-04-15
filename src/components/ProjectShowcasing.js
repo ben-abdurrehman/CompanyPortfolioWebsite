@@ -80,24 +80,154 @@
 // }
 
 
+// "use client";
+
+// import { useLayoutEffect, useRef } from "react";
+// import { FiArrowUpRight } from "react-icons/fi";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import project from "./objects/Projects";
+// import Image from "next/image";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export default function ProjectShowcasing() {
+//   const containerRef = useRef(null);
+//   const trackRef = useRef(null);
+
+//   useLayoutEffect(() => {
+//     const ctx = gsap.context(() => {
+//       const track = trackRef.current;
+//       const container = containerRef.current;
+
+//       gsap.to(track, {
+//         xPercent: -90 * (project.length - 1),
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: container,
+//           start: "top top",
+//           end: () => `+=${container.offsetWidth}`,
+//           scrub: true,
+//           pin: true,
+//           anticipatePin: 1,
+//         },
+//       });
+//     }, containerRef);
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section
+//       id="projects"
+//       ref={containerRef}
+//       className="font-['SatoshiVariable'] w-full h-screen overflow-hidden bg-white text-center"
+//     >
+//       <div className="sticky top-0 z-10 py-10 bg-white">
+//         <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
+//           Innovation & Results
+//         </h2>
+//         <p className="text-gray-500 font-['Inter'] text-lg mt-2 mb-10">
+//           Driving progress with creative solutions and tangible impact.
+//         </p>
+//       </div>
+
+//       <div
+//         ref={trackRef}
+//         className="flex w-fit h-[calc(100vh-140px)] items-center"
+//       >
+//         {project.map((caseStudy, index) => (
+//           <div
+//             key={index}
+//             className="min-w-[90vw] md:min-w-[70vw] px-4"
+//           >
+//             <div className="bg-white h-56 rounded-[10px] flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 sm:space-x-6 p-6">
+//               <div className="w-full sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
+//                 <span className="md:text-xs lg:text-lg font-bold text-black">
+//                   {caseStudy.category}
+//                 </span>
+//                 <h3 className="text-2xl md:text-xl lg:text-2xl 2xl:text-9xl font-extrabold text-gray-900">
+//                   {caseStudy.title}
+//                 </h3>
+//                 <button className="bg-gray-200 rounded-xl p-3 transition hover:bg-gray-300">
+//                   <FiArrowUpRight className="text-gray-900 text-lg" />
+//                 </button>
+//               </div>
+
+//               <div className="w-[200px] h-[140px] rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden">
+//                 {caseStudy.image ? (
+//                   <Image
+//                     src={caseStudy.image}
+//                     alt={caseStudy.title}
+//                     className="w-full h-full object-cover"
+//                   />
+//                 ) : (
+//                   <span className="text-gray-400">Image Placeholder</span>
+//                 )}
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
+
+
 
 "use client";
 
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-creative";
-import "swiper/css/pagination";
-import project from "./Projects";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import project from "./objects/Projects";
 import Image from "next/image";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ProjectShowcasing() {
+  const trackWrapperRef = useRef(null);
+  const trackRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const track = trackRef.current;
+      const wrapper = trackWrapperRef.current;
+      
+      // Calculate total horizontal scroll distance
+      const trackWidth = track.scrollWidth;
+      const wrapperWidth = wrapper.offsetWidth;
+      const horizontalScrollDistance = trackWidth - wrapperWidth;
+  
+      gsap.to(track, {
+        x: -horizontalScrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: wrapper,
+          start: "top top",
+          end: () => `+=${horizontalScrollDistance}`,
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          snap: {
+            snapTo: 1 / (project.length - 1),
+            duration: { min: 0.2, max: 0.3 },
+            delay: 0.1,
+            ease: "power1.inOut"
+          },
+          invalidateOnRefresh: true 
+        }
+      });
+    }, trackWrapperRef);
+  
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="projects"
-      className="font-['SatoshiVariable'] w-full py-28 px-4 sm:px-6 lg:px-8 text-center"
+      className="font-['SatoshiVariable'] w-full py-20 px-4 sm:px-6 lg:px-8 text-center"
     >
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
         Innovation & Results
@@ -106,33 +236,25 @@ export default function ProjectShowcasing() {
         Driving progress with creative solutions and tangible impact.
       </p>
 
-      <div className="w-[90%] md:w-5/6 lg:w-4xl xl:w-5xl 2xl:w-7xl mx-auto">
-        <Swiper
-          effect="creative"
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={1}
-          spaceBetween={40}
-          creativeEffect={{
-            prev: {
-              shadow: true,
-              translate: [0, 0, -400],
-            },
-            next: {
-              translate: ["100%", 0, 0],
-            },
-          }}
-          pagination={{ clickable: true }}
-          modules={[EffectCreative, Pagination]}
+      <div
+        ref={trackWrapperRef}
+        className="relative w-full h-[80vh] overflow-hidden"
+      >
+        <div
+          ref={trackRef}
+          className="flex w-fit h-full items-center"
         >
           {project.map((caseStudy, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white h-56 rounded-[10px] border border-[#211951] flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 sm:space-x-6 p-6 transition-transform">
-                <div className="w-full sm:w-auto flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
+            <div
+              key={index}
+              className="min-w-[90vw] md:min-w-[100vw] px-4"
+            >
+              <div className="bg-white rounded-[10px] flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 p-6">
+                <div className="w-full sm:w-[50%] flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
                   <span className="md:text-xs lg:text-lg font-bold text-black">
                     {caseStudy.category}
                   </span>
-                  <h3 className="text-2xl md:text-xl lg:text-2xl 2xl:text-3xl font-extrabold text-gray-900">
+                  <h3 className="text-2xl md:text-xl lg:text-2xl 2xl:text-8xl font-extrabold text-gray-900">
                     {caseStudy.title}
                   </h3>
                   <button className="bg-gray-200 rounded-xl p-3 transition hover:bg-gray-300">
@@ -140,7 +262,7 @@ export default function ProjectShowcasing() {
                   </button>
                 </div>
 
-                <div className="w-[200px] h-[140px] rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden">
+                <div className="w-[40%] h-full rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden">
                   {caseStudy.image ? (
                     <Image
                       src={caseStudy.image}
@@ -152,9 +274,9 @@ export default function ProjectShowcasing() {
                   )}
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </div>
       </div>
     </section>
   );

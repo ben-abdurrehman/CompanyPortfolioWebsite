@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AIImage from "@/assets/AI-image.png";
-import LineSection from "@/assets/Line-Section.svg";
+import DottedLine from "@/assets/Dotted-Line-for-Section.svg";
 
 const Subscription = () => {
   return (
-    <section className="w-full flex justify-center py-10 px-4 sm:px-6 lg:px-8">
-      {/* <Image className="absolute top-0 z-0 w-full h-full object-fill" src={LineSection} alt="Background" /> */}
+    <section className="relative w-full flex justify-center py-10 px-4 sm:px-6 lg:px-8">
+      {/* <Image className="absolute left-20 h-full z-0 w-full opacity-30 overflow-hidden object-cover" src={DottedLine} alt="Background" /> */}
       <motion.div 
           initial={{ opacity: 0, y: 90 }}
           animate={{ opacity: 1, y: 0 }}

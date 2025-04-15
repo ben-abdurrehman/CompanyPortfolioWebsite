@@ -2,13 +2,16 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
-import WorldSvgMap from "@/assets/WorldSvgMap.png";
-import FlagPAK from "@/assets/Flags.png";
-import { IoIosCloseCircle } from "react-icons/io";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Image from "next/image";
+
+import WorldSvgMap from "@/assets/WorldSvgMap.png";
+import { IoIosCloseCircle } from "react-icons/io"; 
+
+import locations from './objects/locations'; // Assuming you have a locations.js file with the location data
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,30 +58,6 @@ export default function OurLocations() {
     );
   }, []);
 
-  const locations = [
-    {
-      id: 1,
-      name: "Lahore, PAK",
-      address: "D-34 Innovista Ravi, DHA Business Hub, DHA Phase-8",
-      coordinates: { top: "45%", left: "70%" },
-      img: FlagPAK,
-    },
-    {
-      id: 2,
-      name: "New York, USA",
-      address: "123 Madison Ave, Manhattan, NY 10016",
-      coordinates: { top: "35%", left: "25%" },
-      img: FlagPAK,
-    },
-    {
-      id: 3,
-      name: "Sydney, AUS",
-      address: "45 George Street, Sydney, NSW 2000",
-      coordinates: { top: "75%", left: "90%" },
-      img: FlagPAK,
-    },
-  ];
-
   return (
     <section ref={sectionRef} className="w-full h-full py-16 px-6 text-center">
       <h2 ref={headingRef} className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-800">Our Locations</h2>
@@ -120,7 +99,6 @@ export default function OurLocations() {
             </button>
             <Image className="w-7 h-7" src={selectedLocation.img} alt="Flag" />
             <strong className="text-[#0A6A30] block">{selectedLocation.name}</strong>
-            <p className="text-sm">{selectedLocation.address}</p>
           </div>
         )}
       </div>

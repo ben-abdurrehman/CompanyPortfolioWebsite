@@ -17,13 +17,13 @@ import GsapAnimejs from '@/components/AnimatedGradientBg'
 import DevtechTape from '@/components/DevtechTape' 
 import Techrain from '@/components/Techrain' 
 import Noise from '@/assets/Taxture.png'
-import LineSection from "@/assets/Line-Section.svg";
+import DottedLine from "@/assets/Dotted-Line-for-Section.svg";
 
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="w-full overflow-hidden relative">
       <div className="  relative w-full h-screen">
         <Navbar />
         <Hero />
@@ -31,8 +31,8 @@ export default function Home() {
       <div className="relative w-full h-auto">
         {/* <GsapAnimejs/> */}
         {/* //style={{ backgroundImage: `url(${Noise.src})`}} */}
-        <div className="relative w-full h-auto bg-cover bg-center bg-no-repeat">
-          <Image className="absolute inset-0 object-fill -z-40 w-full h-full opacity-40" src={LineSection} alt="LineSection" />
+        <div className="relative w-full h-auto bg-cover  bg-center bg-no-repeat">
+          <Image className="absolute left-20 top-[-41%] h-full z-0 w-full opacity-30 overflow-hidden object-fill" src={DottedLine} alt="Background" />
           {/* <Techrain count={40} /> */}
           <Subscription />
           <TechnologySolutions />
