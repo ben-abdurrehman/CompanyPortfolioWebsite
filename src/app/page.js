@@ -16,8 +16,9 @@ import ContactUs from "@/components/ContactUsSection";
 import GsapAnimejs from '@/components/AnimatedGradientBg' 
 import DevtechTape from '@/components/DevtechTape' 
 import Techrain from '@/components/Techrain' 
+
 import Noise from '@/assets/Taxture.png'
-import DottedLine from "@/assets/Dotted-Line-for-Section.svg";
+import DottedLine from '@/assets/SVGs/Dotted-Line-for-Section.svg';
 
 import Image from "next/image";
 
@@ -32,7 +33,7 @@ export default function Home() {
         {/* <GsapAnimejs/> */}
         {/* //style={{ backgroundImage: `url(${Noise.src})`}} */}
         <div className="relative w-full h-auto bg-cover  bg-center bg-no-repeat">
-          <Image className="absolute left-20 top-[-41%] h-full z-0 w-full opacity-30 overflow-hidden object-fill" src={DottedLine} alt="Background" />
+          <Image className="absolute lg:left-[-10%] lg:top-[-42.5%] xl:top-[-41.2%]  2xl:left-20 2xl:top-[-41%] h-full z-0 w-full opacity-30 overflow-hidden object-fill" src={DottedLine} alt="Background" />
           {/* <Techrain count={40} /> */}
           <Subscription />
           <TechnologySolutions />

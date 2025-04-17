@@ -101,7 +101,7 @@ const LogoSlider = () => {
         {Logos.map((logo, i) => (
           <SwiperSlide key={i} className="bg-white rounded-lg justify-center z-30 items-center">
             <div key={i} className="md:px-1 md:py-0 lg:px-2 lg:py-1 xl:px-4 rounded-lg flex justify-center items-center z-30 bg-white">
-              <Image className="relative w-auto h-10 2xl:h-20  select-none object-contain z-50" src={logo} alt={`logo-${i}`} />
+              <Image className="relative w-auto h-14 2xl:h-20  select-none object-contain z-50" src={logo} alt={`logo-${i}`} />
           </div>
           </SwiperSlide>
         ))}

@@ -80,101 +80,6 @@
 // }
 
 
-// "use client";
-
-// import { useLayoutEffect, useRef } from "react";
-// import { FiArrowUpRight } from "react-icons/fi";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import project from "./objects/Projects";
-// import Image from "next/image";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export default function ProjectShowcasing() {
-//   const containerRef = useRef(null);
-//   const trackRef = useRef(null);
-
-//   useLayoutEffect(() => {
-//     const ctx = gsap.context(() => {
-//       const track = trackRef.current;
-//       const container = containerRef.current;
-
-//       gsap.to(track, {
-//         xPercent: -90 * (project.length - 1),
-//         ease: "none",
-//         scrollTrigger: {
-//           trigger: container,
-//           start: "top top",
-//           end: () => `+=${container.offsetWidth}`,
-//           scrub: true,
-//           pin: true,
-//           anticipatePin: 1,
-//         },
-//       });
-//     }, containerRef);
-
-//     return () => ctx.revert();
-//   }, []);
-
-//   return (
-//     <section
-//       id="projects"
-//       ref={containerRef}
-//       className="font-['SatoshiVariable'] w-full h-screen overflow-hidden bg-white text-center"
-//     >
-//       <div className="sticky top-0 z-10 py-10 bg-white">
-//         <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
-//           Innovation & Results
-//         </h2>
-//         <p className="text-gray-500 font-['Inter'] text-lg mt-2 mb-10">
-//           Driving progress with creative solutions and tangible impact.
-//         </p>
-//       </div>
-
-//       <div
-//         ref={trackRef}
-//         className="flex w-fit h-[calc(100vh-140px)] items-center"
-//       >
-//         {project.map((caseStudy, index) => (
-//           <div
-//             key={index}
-//             className="min-w-[90vw] md:min-w-[70vw] px-4"
-//           >
-//             <div className="bg-white h-56 rounded-[10px] flex flex-col sm:flex-row items-start justify-between space-y-4 sm:space-y-0 sm:space-x-6 p-6">
-//               <div className="w-full sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
-//                 <span className="md:text-xs lg:text-lg font-bold text-black">
-//                   {caseStudy.category}
-//                 </span>
-//                 <h3 className="text-2xl md:text-xl lg:text-2xl 2xl:text-9xl font-extrabold text-gray-900">
-//                   {caseStudy.title}
-//                 </h3>
-//                 <button className="bg-gray-200 rounded-xl p-3 transition hover:bg-gray-300">
-//                   <FiArrowUpRight className="text-gray-900 text-lg" />
-//                 </button>
-//               </div>
-
-//               <div className="w-[200px] h-[140px] rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden">
-//                 {caseStudy.image ? (
-//                   <Image
-//                     src={caseStudy.image}
-//                     alt={caseStudy.title}
-//                     className="w-full h-full object-cover"
-//                   />
-//                 ) : (
-//                   <span className="text-gray-400">Image Placeholder</span>
-//                 )}
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -183,6 +88,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import project from "./objects/Projects";
 import Image from "next/image";
+
+import PointingArrowRight  from "@/assets/SVGs/Pointing-Arrow-Round-Right .svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -227,7 +134,7 @@ export default function ProjectShowcasing() {
   return (
     <section
       id="projects"
-      className="font-['SatoshiVariable'] w-full py-20 px-4 sm:px-6 lg:px-8 text-center"
+      className="font-['SatoshiVariable'] relative w-full py-20 px-4 sm:px-6 lg:px-0 text-center"
     >
       <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-gray-900">
         Innovation & Results
@@ -238,11 +145,11 @@ export default function ProjectShowcasing() {
 
       <div
         ref={trackWrapperRef}
-        className="relative w-full h-[80vh] overflow-hidden"
+        className="relative w-full h-[100vh] overflow-hidden"
       >
         <div
           ref={trackRef}
-          className="flex w-fit h-full items-center"
+          className="flex w-full h-full items-center"
         >
           {project.map((caseStudy, index) => (
             <div
@@ -254,7 +161,7 @@ export default function ProjectShowcasing() {
                   <span className="md:text-xs lg:text-lg font-bold text-black">
                     {caseStudy.category}
                   </span>
-                  <h3 className="text-2xl md:text-xl lg:text-2xl 2xl:text-8xl font-extrabold text-gray-900">
+                  <h3 className="text-2xl md:text-xl lg:text-7xl 2xl:text-8xl font-extrabold text-gray-900">
                     {caseStudy.title}
                   </h3>
                   <button className="bg-gray-200 rounded-xl p-3 transition hover:bg-gray-300">
@@ -277,6 +184,7 @@ export default function ProjectShowcasing() {
             </div>
           ))}
         </div>
+      <Image className="absolute h-[40vh] left-[-10%] bottom-[-15%] lg:left-[-20%] lg:bottom-[-15%] xl:left-[-10%] xl:bottom-[-10%] 2xl:left-[-12%] 2xl:bottom-[-15%] select-none  lg:h-[40vh] 2xl:h-[40vh] z-0 w-auto opacity-30 overflow-hidden object-fill" src={PointingArrowRight} alt="Background" />
       </div>
     </section>
   );

@@ -9,11 +9,11 @@ import gsap from "gsap";
 
 import RingRight from "@/assets/RingRight.png";
 import RingLeft from "@/assets/RingLeft.png";
-import Dots from "@/assets/Dots.png";
-import Circles from "@/assets/Circles.png";
-import Star from "@/assets/Star.png";
-import ArrowLeft from "@/assets/ArrowLeft.png";
-import ArrowRight from "@/assets/ArrowRight.png";
+import Dots from "@/assets/FloatingAssets/Dots.png";
+import Circles from "@/assets/FloatingAssets/Circles.png";
+import Star from "@/assets/FloatingAssets/Star.png";
+// import ArrowLeft from "@/assets/ArrowLeft.png";
+// import ArrowRight from "@/assets/ArrowRight.png";
 import WavyBlue from "@/assets/WavyBlue.jpg";
 import blurredColorful1 from "@/assets/blurredColorful1.jpg";
 import blurredColorful2 from "@/assets/blurredColorful2.jpg";

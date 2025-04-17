@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import Mission from "@/assets/Mission.png";
+import PointingArrowLeft  from "@/assets/SVGs/Pointing-Arrow-Round-Left.svg";
+
 
 export default function MilestoneSection() {
   const sectionRef = useRef(null);
@@ -31,9 +33,10 @@ export default function MilestoneSection() {
 
   return (
     <section ref={sectionRef} className="font-['SatoshiVariable'] w-full sm:h-[100vh] lg:h-[70vh] relative flex items-center justify-center z-20 py-16 px-6">
+      <Image className="absolute xl:right-[-7%] 2xl:right-[-4%] bottom-[-25%] -rotate-12 xl:h-[30vh] 2xl:h-[36vh] select-none z-0 w-auto opacity-30 overflow-hidden object-fill" src={PointingArrowLeft} alt="Background" />
       <div className="flex flex-col lg:flex-row items-center lg:justify-evenly py-16 w-[90%] md:w-5/6 lg:w-4xl xl:w-5xl 2xl:w-7xl">
         <div className="z-40 bg-gray-200 rounded-lg w-full h-full md:w-[90%] lg:w-[45%] xl:w-2/5">
-          <Image src={Mission} alt="Mission" className="shadow-lg w-full h-full md:h-96 md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg" />
+          <Image src={Mission} alt="Mission" className="shadow-lg w-full h-full xl:h-96 md:hover:translate-y-[-8px] md:hover:translate-x-[-8px] transition-transform rounded-lg" />
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-5 lg:w-[45%] xl:w-2/5 text-center md:text-left mt-10 md:mt-10 lg:mt-0 lg-12">
@@ -42,7 +45,7 @@ export default function MilestoneSection() {
             <span className="lg:block">We’re only just getting </span>started on our journey
           </h2>
 
-          <div className="grid grid-cols-1 text-center md:grid-cols-2 md:gap-x-40 lg:gap-x-20 md:gap-y-10 lg:grid-cols-2 gap-y-10 mt-4">
+          <div className="grid grid-cols-1 text-center md:grid-cols-2 md:gap-x-40 lg:gap-x-5 md:gap-y-5 lg:grid-cols-2 gap-y-5 mt-4">
             {[{ end: 23, suffix: "+", text: "Projects Completed" },
               { end: 1.69, suffix: "M", text: "Secured worldwide" },
               { end: 43, suffix: "", text: "Professional Members" },
@@ -52,7 +55,7 @@ export default function MilestoneSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1 }}
-                className="bg-white p-5 rounded-2xl lg:bg-transparent lg:p-0 lg:rounded-none" 
+                className="bg-gray-100 p-5 lg:p-2 xl:p-5 rounded-2xl" 
               >
                 <CountUp end={item.end} suffix={item.suffix} /> <span> {item.text} </span>
               </motion.div>
