@@ -16,7 +16,7 @@ const project = [
       image: DevPOSFavicon, 
     },
     {
-      title: "Amir Watche Company",
+      title: "Amir Watches Company",
       category: "UX case study",
       image: AWCFavicon, 
     },

@@ -10,7 +10,7 @@ import Image from "next/image";
 import WorldSvgMap from "@/assets/WorldSvgMap.png";
 import { IoIosCloseCircle } from "react-icons/io"; 
 
-import locations from './objects/locations'; // Assuming you have a locations.js file with the location data
+import locations from '../data/objects/locations'; // Assuming you have a locations.js file with the location data
 
 
 gsap.registerPlugin(ScrollTrigger);

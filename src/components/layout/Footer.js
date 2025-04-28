@@ -1,4 +1,4 @@
-import "../app/globals.css";
+import "@/styles/globals.css";
 import Logo from "@/assets/White/DTF-Primary-Logo-White.png";
 import Image from "next/image";
 import { FaFacebookF, FaGithub, FaDribbble, FaLinkedinIn } from "react-icons/fa";
@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mt-2 text-sm md:text-base">
-              Design amazing digital experiences that create more happy in the world.
+            Where Development Meets Technology for Tomorrow’s Solutions.
             </p>
           </div>
 

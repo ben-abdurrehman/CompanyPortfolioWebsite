@@ -1,5 +1,5 @@
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import solutions from "./objects/Solutions";
+import solutions from "@/data/objects/Solutions";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";

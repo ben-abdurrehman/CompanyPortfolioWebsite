@@ -86,7 +86,7 @@ import { useLayoutEffect, useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import project from "./objects/Projects";
+import project from "@/data/objects/Projects";
 import Image from "next/image";
 
 import PointingArrowRight  from "@/assets/SVGs/Pointing-Arrow-Round-Right .svg";

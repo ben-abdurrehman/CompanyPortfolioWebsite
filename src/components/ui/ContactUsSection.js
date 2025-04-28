@@ -16,7 +16,7 @@ export default function ContactUs() {
       icon: <LuPhone />,
       title: "Phone",
       description: "Mon-Fri from 8am to 5pm.",
-      link: "+1 (555) 000-0000",
+      link: "0314-9370777",
     },
   ];
 
@@ -47,7 +47,7 @@ export default function ContactUs() {
                     {contact.description}
                   </p>
                   <a
-                    href={`mailto:${contact.link}`}
+                    href={contact.id === 1 ? "mailto:" + contact.link : "tel:" + contact.link}
                     className="text-[#211951] font-semibold"
                   >
                     {contact.link}

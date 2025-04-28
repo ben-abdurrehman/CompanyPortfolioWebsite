@@ -7,38 +7,22 @@ import { useEffect, useState, useRef } from "react";
 
 import gsap from "gsap";
 
-import RingRight from "@/assets/RingRight.png";
-import RingLeft from "@/assets/RingLeft.png";
+import RingRight from "@/assets/FloatingAssets/RingRight.png";
+import RingLeft from "@/assets/FloatingAssets/RingLeft.png";
 import Dots from "@/assets/FloatingAssets/Dots.png";
 import Circles from "@/assets/FloatingAssets/Circles.png";
 import Star from "@/assets/FloatingAssets/Star.png";
-// import ArrowLeft from "@/assets/ArrowLeft.png";
-// import ArrowRight from "@/assets/ArrowRight.png";
-import WavyBlue from "@/assets/WavyBlue.jpg";
-import blurredColorful1 from "@/assets/blurredColorful1.jpg";
-import blurredColorful2 from "@/assets/blurredColorful2.jpg";
+
 
 
 import GsapAnimejs from "./AnimatedGradientBg";
 // import ParticlesBackground from "./ParticlesBackground";
 import CalendlyPopupButton from "./CalendlyPopupButton";
-import LogoSlider from "./LogosSliderBar";
-import AnimatedText from "./AnimatedText";
+import LogoSlider from "@/components/ui/LogosSliderBar";
+import AnimatedText from "@/components/ui/AnimatedText";
 
 import { PopupButton } from "react-calendly";
 
-// #211951
-
-{/* // /videos/AbstractNebula.mp4
-        // /videos/AnimationBlur.mp4
-        // /videos/LightSpeed.mp4
-        // /videos/Luminous.mp4
-        // /videos/ParticleBg.mp4
-        // /videos/ParticleMoving.mp4
-        // /videos/Tech.mp4 
-        // /videos/LightRaining.mp4 
-        // /videos/SpeedLight.mp4 
-        // */}
 
 const Hero = () => {
   const lines = [
